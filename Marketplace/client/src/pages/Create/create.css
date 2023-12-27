@@ -1,0 +1,32 @@
+.post-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-field {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}

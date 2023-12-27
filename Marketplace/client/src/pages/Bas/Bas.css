@@ -1,0 +1,36 @@
+
+.container {
+    max-width: 100%;
+
+}
+
+.products {
+    display: grid;
+    grid-template-columns:30% 30% 30% ;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.product {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    width: 200px;
+    height: 120px;
+    padding: 20px;
+    text-align: center;
+}
+
+.img-bas {
+    max-width: 200px;
+    height: 120px;
+    border-radius: 8px;
+}
+
+.product h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
