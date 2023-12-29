@@ -1,5 +1,5 @@
 module.exports = {
   database: "marketplace",
   username: "root",
-  password: "407000",
+  password: "Louay2004@",
 };
