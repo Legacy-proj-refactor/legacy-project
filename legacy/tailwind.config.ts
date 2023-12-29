@@ -1,41 +1,20 @@
 import type { Config } from 'tailwindcss'
 
-
 const config: Config = {
-  "content": [
-      "./pages/**/*.{js,ts,jsx,tsx}",
-      "./components/**/*.{js,ts,jsx,tsx}"
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  "theme": {
-      "extend": {
-          "colors": {
-              "bg": "#fff",
-              "text2": "#000",
-              "text": "#fafafa",
-              "button2": "#db4444",
-              "gray": {
-                  "100": "rgba(0, 0, 0, 0.4)",
-                  "200": "rgba(0, 0, 0, 0.5)"
-              },
-              "secondary": "#f5f5f5"
-          },
-          "spacing": {},
-          "fontFamily": {
-              "title-14px-regular": "Poppins",
-              "heading-24px-bold": "Inter"
-          }
+  theme: {
+    extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      "fontSize": {
-          "sm": "14px",
-          "xs": "12px",
-          "xl": "20px",
-          "base": "16px",
-          "5xl": "24px",
-          "inherit": "inherit"
-      }
+    },
   },
-  "corePlugins": {
-      "preflight": false
-  }
+  plugins: [],
 }
-export default config;
+export default config

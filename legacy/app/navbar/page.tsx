@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -11,11 +11,18 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Badge from '@mui/material/Badge';
 
+interface Product {
+  name: string;
+}
 function Navbar() {
   const [activeIndex, setActiveIndex]=useState<number|null>(null)
   const [auth, setAuth] =useState<boolean>(true);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [searched,setSearched]=useState([])
+  const [searched,setSearched]=useState<Product[]>([])
+
+  useEffect(()=>{
+    search()
+  },[])
 
   const handleItemClick = (index: number) => {
     setActiveIndex(index === activeIndex ? null : index);
@@ -28,15 +35,12 @@ function Navbar() {
     setAnchorEl(null);
   };
 
-  interface Product {
-    name: string;
-  }
   const search = async (prod: Product): Promise<void> => {
     try {
       const response = await fetch(`http://localhost:3000/api/navbar/search?name=${encodeURIComponent(prod.name)}`);
   
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        console.error(`HTTP error! Status: ${response.status}`);
       }
   
       const data: Product[] = await response.json();
@@ -86,7 +90,7 @@ function Navbar() {
           }`}
           onClick={() => handleItemClick(2)}
         >
-          <Link href="/about">About</Link>
+          <Link href="/test">About</Link>
         </li>
         <li
           className={`mr-16 text-2xl cursor-pointer ${
