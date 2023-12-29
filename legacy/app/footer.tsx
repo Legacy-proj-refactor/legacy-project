@@ -1,3 +1,11 @@
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import EmailIcon from "@mui/icons-material/Email";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import PinterestIcon from "@mui/icons-material/Pinterest";
 const Footer = () => {
     return (
       <footer>
@@ -26,16 +34,16 @@ const Footer = () => {
               </div>
               <ul className="footer__contacts">
                 <li className="footer__contact">
-                  {/* <LocalPhoneIcon />  */}
+                  <LocalPhoneIcon /> 
                   <span>+55000000</span>
                 </li>
                 <li className="footer__contact">
-                  {/* <EmailIcon /> */}
+                  <EmailIcon />
                    <span>Contact@Contact.tn</span>
                 </li>
                 <li className="footer__contact">
 
-                  {/* <LocationOnIcon />  */}
+                  <LocationOnIcon /> 
                   <span>tunis tunis </span>
                 </li>
               </ul>
@@ -46,19 +54,19 @@ const Footer = () => {
               </div>
               <ul className="footer__social__links">
                 <li className="social__link">
-                  {/* <TwitterIcon /> */}
+                  <TwitterIcon />
                 </li>
                 <li className="social__link">
-                  {/* <InstagramIcon /> */}
+                  <InstagramIcon />
                 </li>
                 <li className="social__link">
-                  {/* <YouTubeIcon /> */}
+                  <YouTubeIcon />
                 </li>
                 <li className="social__link">
-                  {/* <TelegramIcon /> */}
+                  <TelegramIcon />
                 </li>
                 <li className="social__link">
-                  {/* <PinterestIcon /> */}
+                  <PinterestIcon />
                 </li>
               </ul>
             </div>
@@ -74,5 +82,4 @@ const Footer = () => {
       </footer>
     );
   };
-  
   export default Footer;

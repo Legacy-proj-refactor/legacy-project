@@ -21,12 +21,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <div> <Navber/></div>
         <div>{children}</div>
-     {/* <div> <Link href="/test">
-        <button >home</button>
-     </Link></div>
-     <div> <Link href="/">
-        <button >app</button>
-     </Link></div> */}
      <Page/>
      </body>
     </html>
