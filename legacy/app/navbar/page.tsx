@@ -11,6 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Badge from '@mui/material/Badge';
 
+
 function Navbar() {
   const [activeIndex, setActiveIndex]=useState<number|null>(null)
   const [auth, setAuth] =useState<boolean>(true);
@@ -40,8 +41,9 @@ function Navbar() {
       }
   
       const data: Product[] = await response.json();
+      if(Array.isArray(data)){
       setSearched(data);
-      console.log("finded", data);
+      console.log("finded", data);}
     } catch (error) {
       console.error(error);
     }
