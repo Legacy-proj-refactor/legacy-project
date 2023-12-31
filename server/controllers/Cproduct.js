@@ -122,3 +122,21 @@ exports.delFav = function (req, res) {
       res.send(err);
     });
 };
+exports.getAllcard = function (req, res) {
+  db.cards.findAll()
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+exports.createCard = function (req, res) {
+  db.cards.create(req.body)
+    .then(() => {
+      res.json("added");
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};

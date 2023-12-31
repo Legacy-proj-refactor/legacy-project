@@ -66,7 +66,7 @@ function Navbar() {
       </nav>
       <header className='pl-20 h-40 pt-12'>
       <div className='flex items-center '>
-            <h1 className='text-3xl font-bold  ' >MarketPlace</h1>
+            <h1 className='text-3xl font-bold'>MarketPlace</h1>
             <ul className="flex ml-96">
         <li
           className={`mr-16 text-2xl cursor-pointer ${
@@ -122,9 +122,11 @@ function Navbar() {
             <Badge badgeContent={4} color="secondary">
             <FavoriteBorderIcon className='ml-10'/>
             </Badge>
+            <Link href="/cart">
             <Badge color="secondary" variant="dot">
             <AddShoppingCartIcon className='ml-10'/>
             </Badge>
+            </Link>
               <Stack  className='ml-10' direction="row" spacing={2}>
                 <Avatar  onClick={handleMenu}  alt="" src="/broken-image.jpg" />
                 <Menu

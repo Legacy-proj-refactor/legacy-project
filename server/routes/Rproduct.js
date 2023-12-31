@@ -8,6 +8,8 @@ const controller3 = require("../controllers/Cproduct");
 
 Route.post("/add", controller3.createOne);
 Route.get("/get",controller3.getAllproduct)
+Route.get("/getC",controller3.getAllcard)
+Route.post("/addC", controller3.createCard);
 // Route.get("/getOne/:id",controller3.getOne)
 Route.get("/get/:id",controller3.getAll)
 Route.delete("/del/:id",controller3.remove)

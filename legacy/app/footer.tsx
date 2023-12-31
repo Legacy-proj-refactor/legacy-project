@@ -19,7 +19,6 @@ const Footer = () => {
                 <li className="help__link">
                   <a href="/"> Shipping</a>
                 </li>
-  
                 <li className="help__link">
                   <a href="/">FAQ</a>
                 </li>

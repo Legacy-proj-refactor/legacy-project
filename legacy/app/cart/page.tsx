@@ -11,10 +11,9 @@ import Link from 'next/link';
 const Cart: React.FC = () => {
   interface Product {
     id: number;
-    title: string;
+    name: string;
     price: number;
     image: string;
-    // Add other product properties as needed
   }
 
   interface CartState {
@@ -27,12 +26,13 @@ const Cart: React.FC = () => {
     quantity: 1,
   });
 
-  const router = useRouter(); // Corrected router import
-
+ 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://fakestoreapi.com/products');
+       
+        const response = await fetch('http://localhost:3000/api/product/getC');
+
         if (response.ok) {
           const data: Product[] = await response.json();
           setState((prevState) => ({ ...prevState, cartItems: data }));
@@ -43,7 +43,7 @@ const Cart: React.FC = () => {
         console.error(error);
       }
     };
-  
+
     fetchData();
   }, []);
   const handleIncrement = () => {
@@ -59,7 +59,7 @@ const Cart: React.FC = () => {
   const handleRemoveFromCart = (productId: number) => {
     setState((prevState) => ({
       ...prevState,
-      cartItems: prevState.cartItems.filter((product) => product.id !== productId),
+      cartItems: prevState.cartItems.filter((product) => product.id!== productId),
     }));
   };
 
@@ -81,9 +81,8 @@ const Cart: React.FC = () => {
               <RemoveIcon />
             </Button>
           </div>
-
-          <img className='imgcard' src={el.image} alt="" />
-          <h3 className='h3'>$ {el.price}</h3>
+        <img className='imgcard' src={el.image[0]} alt="" />
+        <h3 className='h3'>$ {el.price}</h3>
           <div>
           <IconButton color="inherit" onClick={handleDecrement}>
               <RemoveIcon />
@@ -101,16 +100,16 @@ const Cart: React.FC = () => {
         <h1 className='a'>Cart Total</h1>
         <div className="under">
           <h5 className='subtotal'>
-            Subtotal: ${subtotal}
+            Subtotal:<h1  className='b'>${subtotal}</h1>
             <span className="line"></span>
           </h5>
           <h5 className='shipping'>
-            Shipping: Free
+            Shipping: <h1  className='b'>Free</h1>
             <span className="line"></span>
           </h5>
-          <h3 className='a'>
-            Total: ${subtotal}
-          </h3>
+          <h5 className='shipping'>
+            Total: <h1 className='b'>${subtotal}</h1>
+          </h5>
         </div>
         <Link href="/flousi">
         <button className="bt">
