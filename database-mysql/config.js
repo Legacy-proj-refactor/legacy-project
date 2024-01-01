@@ -1,5 +1,6 @@
 module.exports = {
-  database: "marketplace",
-  username: "root",
-  password: "407000",
+  "host": "localhost",
+  "user": "root",
+   "password": "abidi123",
+   "database": "marketplace"
 };

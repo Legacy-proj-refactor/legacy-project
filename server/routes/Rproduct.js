@@ -4,7 +4,8 @@ const controller3 = require("../controllers/Cproduct");
 
 
 
-
+Route.get("/getCA",controller3.getAllcard)
+Route.post("/addC", controller3.createCard);
 
 Route.post("/add", controller3.createOne);
 Route.get("/get",controller3.getAllproduct)

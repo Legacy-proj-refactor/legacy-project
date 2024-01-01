@@ -7,7 +7,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 const connection = new Sequelize(
   "marketplace",
   "root",
-  "407000",
+  "abidi123",
   {
     host: "localhost",
     dialect: "mysql",
@@ -152,6 +152,30 @@ const Save = connection.define('saves', {
   },
 });
 
+
+const cards = connection.define('cards', {
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING(45),
+    allowNull: false,
+  },
+  image: {
+    type: DataTypes.JSON,
+    allowNull: false,
+  },
+  price: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+})
+
+
+
 Save.belongsTo(User, { foreignKey: 'users_idu', as: 'user' });
 Save.belongsTo(Product, { foreignKey: 'product_idp', as: 'product' });
 
@@ -179,4 +203,4 @@ connection.authenticate()
 
 
 
-module.exports = {User,Save,Product,Category}
+module.exports = {User,Save,Product,Category,cards}
